@@ -1,0 +1,40 @@
+Name: Larry Bratton		
+
+Course:	CPSC 4160
+
+Clemson Email Address: lbratto@clemson.edu		
+
+Project no: 6
+
+Project due date: Dec. 5th , 2018
+
+Project description: (Also, what image did you draw?)
+	- i am trying to make a sort of recreation of the battle scenes from the gameboy advance game series
+		Advance wars, in which the player is tasked with defending an objective for about 2-3 minutes or until
+		they defeat the enemy commander
+
+Where I got my sprites:
+
+	I downloaded all of my sprites and back grounds from the internet:
+	-	https://www.spriters-resource.com/ds_dsi/advancewarsds/sheet/33991/
+	-  http://z3.invisionfree.com/The_Sprite_Hub/ar/t40.htm
+	I got my sound effects from your examples and the back ground music from 
+	 - https://www.youtube.com/watch?v=HdovwIohtfM&list=PLbZvcJcTGa9_bKPhqV15xWHjaBSSvddgb&index=3
+
+
+
+How many backgrounds do I have:
+ 	i have 2 backgrounds 
+
+The easiest part of this project:
+	- I would say not giving up, because it was fun to do.
+
+
+Problems that I had in completing this project:
+	- I couldn't get the AI to act like i wanted so i had to implement multiplayer instead
+
+Final Project:
+	- my project is a reimagining of the game series advance wars, letting two players
+		go head to head. The rules are simple, the first player to destroy the other player's
+		 home base wins
+

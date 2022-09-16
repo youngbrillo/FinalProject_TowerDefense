@@ -1,0 +1,627 @@
+<?xml version = "1.0"?>
+<GameData>
+<!-- screenTitle is also used to identify you and your animation. 
+     So make sure to include your name as part of the screenTitle -->
+<title>Advance War's: The Fan Game</title>
+<maxStringSize>50</maxStringSize>
+
+<frameCapOn>true</frameCapOn>
+<period>17</period>
+<!-- used 1500 max frames to make the 25 second animation -->
+<maxFrames>1500</maxFrames>
+<username>lbratto</username>
+<username_loc x ="5" y = "310"/>
+
+<font name="font">
+  <file>fonts/arial.ttf</file>
+  <size>14</size>
+  <red>0255</red>
+  <green>0255</green>
+  <blue>0255</blue>
+  <alpha>0255</alpha>
+</font>
+
+
+<view>
+  <width>1000</width>
+  <height>336</height>
+  <loc x="148" y="228"/>
+</view>
+
+<world>
+  <width>1000</width>
+  <height>336</height>
+  <ceiling> 130 </ceiling>
+  <floor> 320 </floor>
+</world>
+
+<back>
+  <file>assets/backgrounds/sky.png</file>
+  <factor>3</factor>
+  <transparency>false</transparency>
+</back>
+
+<fore>
+  <file>assets/backgrounds/bridge.png</file>
+  <factor>3</factor>
+  <transparency>false</transparency>
+</fore>
+
+<banner>
+	<file>assets/banner.png</file>	
+	<factor> 1</factor>
+	<transparency> false </transparency>
+</banner>
+<!-- **************** PLAYER ************************* -->
+<Player>
+  <file>assets/OS/orangeStarTank.png </file>
+  <startLoc x="50" y="220"/>
+	<frames>12</frames>
+	<frameInterval>100</frameInterval>
+  <speedX>200</speedX>
+  <speedY>200</speedY>
+  <transparency>true</transparency>
+  <triggerRange> 100 </triggerRange>
+</Player>
+
+<bullet>
+	<file>assets/bullet.png</file>
+	<frames> 1</frames>
+	<speedX> 500 </speedX>
+	<speedY> 0 	</speedY>
+	<minSpeed> 400 </minSpeed>
+	<transparency> true </transparency>
+	<interval>	90 </interval>
+	<strategy>perpixel</strategy>
+	<startLoc x="50" y="200"/>
+	<distance> 500 </distance>
+	<limit> 15 </limit>
+	<damage> 1 </damage>
+</bullet>
+
+<rocket>
+	<file>assets/bullet.png</file>
+	<frames> 1</frames>
+	<speedX> 500 </speedX>
+	<speedY> 0 	</speedY>
+	<minSpeed> 400 </minSpeed>
+	<transparency> true </transparency>
+	<interval>	90 </interval>
+	<strategy>midpoint</strategy>
+	<startLoc x="50" y="200"/>
+	<distance> 500 </distance>
+	<limit> 15 </limit>
+	<damage> 10 </damage>
+</rocket>
+
+<RefreshRate> 5000 </RefreshRate>
+<RefreshPoint> 50 </RefreshPoint>
+
+
+<!-- ***************** NPC's ********************** -->
+
+<!-- ****************************HeadQuarters ********************* -->
+<PlayerHQ>
+	<playerTag> 1 </playerTag>
+	<HQSprite>
+		  <file>assets/OS/orangeStarHQ.png </file>
+		  <startLoc x="20" y="125"/>
+			<frames>1</frames>
+			<frameInterval>1000</frameInterval>
+		  <speedX>0</speedX>
+		  <speedY>0</speedY>
+		  <transparency>true</transparency>
+		  <triggerRange> 0 </triggerRange>
+  			<safeDistance> 120 </safeDistance>
+  			<acceleration> 1.5 </acceleration>
+		  <DecisionInterval>500 </DecisionInterval>
+				
+		
+			<hp>
+				<width> 60 </width>
+				<height> 3 </height>
+				<barColor r="0" g="255" b="0" a="255"/>
+				<backColor r="0" g="155" b="155" a="125" />
+				<increment> 50 </increment>
+			</hp>
+			<chunk>
+			 	<size>32</size>
+			 	<distance>100</distance>
+			</chunk>
+			<value> 1000 </value>
+	</HQSprite>
+	<!-- hud stuff -->
+
+
+				<Portrait>
+				  <file>assets/COs/andyPortrait.png</file>
+				  <frames>8</frames>
+				  <transparency>true</transparency>
+				</Portrait>
+
+				<UnitSelect>
+				  	<file>assets/UnitSelection1.png</file>
+				  	<frames>4</frames>
+				  	<transparency>true</transparency>
+  					<pos x="135" y="3"/>
+				  	<imgScale> 1 </imgScale>
+				</UnitSelect>
+
+	<hud>
+		<loc x="3" y="3" w="190" h="60"/>
+		<text r="255" g="255" b="255" a="255"/>
+		<size> 3 </size>
+		<spacing> 14 </spacing>
+		<boxColor r="255" g="110" b="0" a="175"/>
+		<healthtxt>           Health:	</healthtxt>
+		<fundstxt>           Funds:	</fundstxt>
+		<troopstxt>           Troops:	</troopstxt>
+	</hud>
+
+
+	<instructions>
+		<loc x="195" y="3" w="300" h="87"/>
+		<color r="255" g="255" b="255" a="255"/>
+		<size> 6 </size>
+		<spacing> 14 </spacing>
+		<message0> Instructions: 				</message0>
+		<message1> W -> move up      Q -> switchUnit </message1>
+		<message2> S -> move down   E -> select Unit to deploy</message2>
+		<message3> A -> move left       F -> deploy Unit </message3>
+		<message4> D -> move right </message4>
+		<message5> L Shift -> shoot		</message5>
+		<dimX> 50 </dimX>
+		<dimY> 50 </dimY>
+		<r_color r="255" g="110" b="0" a="127"/>
+
+	</instructions>
+
+
+	<hider r="127" g="127" b="127" a="140" />
+	<startingFunds> 100 </startingFunds>
+	<unitCapacity> 10 </unitCapacity>
+
+
+	<unitPrice>
+		<i0> 700 </i0>
+		<i1> 400 </i1>
+		<i2> 100 </i2>
+		<i3> 250</i3>
+	</unitPrice>
+
+
+
+	<tank>
+	  <file>assets/OS/orangeStarTank.png</file>  <startLoc x="20" y="220"/>
+	  <frames>12</frames>   <frameInterval>100</frameInterval>
+	  <speedX>30</speedX>  <speedY>30</speedY>
+	  <transparency>true</transparency> <ammount>1</ammount>
+	  <safeDistance> 120 </safeDistance>  <acceleration> 1.5 </acceleration>
+	  <DecisionInterval>3500 </DecisionInterval>
+		<chunk>
+		 	<size>8</size> 	<distance>30</distance>
+		</chunk>
+		<hp>
+			<width> 30 </width>  <height> 5</height>
+			<barColor r="0" g="255" b="0" a="255"/> <backColor r="0" g="155" b="155" a="125" />
+			<increment> 30 </increment>
+		</hp>
+		<debugLoc x="5" y="90"/>
+				<value> 500 </value>
+	</tank>
+	<infantry>
+	  <file>assets/OS/orangeStarInf1.png</file>
+	  <startLoc x="20" y="220"/>
+	  <frames>12</frames>
+	  <frameInterval>100</frameInterval>
+	  <speedX>150</speedX>
+	  <speedY>150</speedY>
+	  <transparency>true</transparency>
+	  <ammount>1</ammount>
+	  <safeDistance> 120 </safeDistance>
+	  <acceleration> 1.5 </acceleration>
+	  <DecisionInterval>3500 </DecisionInterval>
+		<chunk>
+		 	<size>8</size>
+		 	<distance>30</distance>
+		</chunk>
+		<hp>
+			<width> 30 </width>
+			<height> 5</height>
+			<barColor r="0" g="255" b="0" a="255"/>
+			<backColor r="0" g="155" b="155" a="125" />
+			<increment> 2 </increment>
+		</hp>
+		<debugLoc x="5" y="90"/>
+				<value> 50 </value>
+	</infantry>
+
+	<rocketman>
+	  <file>assets/OS/orangeStarInf2.png</file>
+	  <startLoc x="20" y="220"/>
+	  <frames>12</frames>
+	  <frameInterval>100</frameInterval>
+	  <speedX>150</speedX>
+	  <speedY>150</speedY>
+	  <transparency>true</transparency>
+	  <ammount>1</ammount>
+	  <safeDistance> 120 </safeDistance>
+	  <acceleration> 1.5 </acceleration>
+	  <DecisionInterval>3500 </DecisionInterval>
+		<chunk>
+		 	<size>8</size>
+		 	<distance>30</distance>
+		</chunk>
+		<hp>
+			<width> 30 </width>
+			<height> 5</height>
+			<barColor r="0" g="255" b="0" a="255"/>
+			<backColor r="0" g="155" b="155" a="125" />
+			<increment> 5 </increment>
+		</hp>
+		<debugLoc x="5" y="90"/>
+				<value> 100 </value>
+	</rocketman>
+
+<truck>
+  <file>assets/OS/orangeStarAPC.png</file>
+  <startLoc x="20" y="220"/>
+  <frames>4</frames>
+  <frameInterval>100</frameInterval>
+  <speedX>70</speedX>
+  <speedY>70</speedY>
+  <transparency>true</transparency>
+  <safeDistance> 120 </safeDistance>
+  <ammount>1</ammount>
+	<troopCapacity> 1 </troopCapacity>
+  <acceleration> 1.5 </acceleration>	
+	<chunk>
+    	<size>16</size>
+    	<distance>30</distance>
+	</chunk>
+	<hp>
+		<width> 70 </width>
+		<height> 5</height>
+		<barColor r="255" g="255" b="0" a="255"/>
+		<backColor r="255" g="155" b="155" a="100" />
+		<increment> 20 </increment>
+	</hp>
+
+	<DecisionInterval>3500 </DecisionInterval>
+	<DeploymentInterval>2000 </DeploymentInterval>
+	<value> 200 </value>
+</truck>
+
+
+
+
+<winscreen>
+	<pos x="5" y="5" w="990 " h="326 "/>
+	<color r="175" g="115" b="70 " a="220 "/>
+	<txtcolor r="0" g="255" b="255 " a="220 "/>
+	<mssg> Player 1 wins! Press F4 to play again or Press Esc to quit </mssg>
+
+	<startLoc x="80" y="30" />
+
+
+
+				  <file>assets/COs/andyProfile.png</file>
+				  <frames>8</frames>
+				  <transparency>true</transparency>
+
+</winscreen>
+
+</PlayerHQ>
+
+
+
+<EnemyHQ>
+	<playerTag> 1 </playerTag>
+	<HQSprite>
+		  <file>assets/YC/yellowCometHQ.png </file>
+		  <startLoc x="920" y="125"/>
+			<frames>1</frames>
+			<frameInterval>1000</frameInterval>
+		  <speedX>0</speedX>
+		  <speedY>0</speedY>
+		  <transparency>true</transparency>
+		  <triggerRange> 0 </triggerRange>
+  			<safeDistance> 120 </safeDistance>
+  			<acceleration> 1.5 </acceleration>
+		  <DecisionInterval>500 </DecisionInterval>
+				
+		
+			<hp>
+				<width> 70 </width>
+				<height> 3 </height>
+				<barColor r="0" g="255" b="0" a="255"/>
+				<backColor r="0" g="155" b="155" a="125" />
+				<increment> 50 </increment>
+			</hp>
+			<chunk>
+			 	<size>32</size>
+			 	<distance>100</distance>
+			</chunk>
+	
+			<value> 1000 </value>
+	</HQSprite>
+	<!-- hud stuff -->
+
+
+				<Portrait>
+				  <file>assets/COs/sonjaPortrait.png</file>
+				  <frames>8</frames>
+				  <transparency>true</transparency>
+				</Portrait>
+
+				<UnitSelect>
+				  	<file>assets/UnitSelection1.png</file>
+				  	<frames>4</frames>
+				  	<transparency>true</transparency>
+  					<pos x="940" y="3"/>
+				  	<imgScale> 1 </imgScale>
+				</UnitSelect>
+
+	<hud>
+		<loc x="810" y="3" w="190" h="60"/>
+		<text r="255" g="255" b="255" a="255"/>
+		<size> 3 </size>
+		<spacing> 14 </spacing>
+		<boxColor r="0" g="110" b="0" a="175"/>
+		<healthtxt>           Health:	</healthtxt>
+		<fundstxt>           Funds:	</fundstxt>
+		<troopstxt>           Troops:	</troopstxt>
+	</hud>
+
+	<instructions>
+		<loc x="500" y="3" w="305" h="87"/>
+		<color r="255" g="255" b="255" a="255"/>
+		<size> 6 </size>
+		<spacing> 14 </spacing>
+		<message0> Instructions:				</message0>
+		<message1> O       -> move up        P-> swtich between units</message1>
+		<message2> L       -> move down     I -> select units</message2>
+		<message3> K       -> move left        J -> deploy selcted unit</message3>
+		<message4> ;       -> move right </message4>
+		<message5> R Shift -> shoot		</message5>
+		<dimX> 50 </dimX>
+		<dimY> 50 </dimY>
+		<r_color r="0" g="110" b="0" a="185"/>
+
+	</instructions>
+
+
+
+	<hider r="127" g="127" b="127" a="140" />
+	<startingFunds> 100 </startingFunds>
+	<unitCapacity> 10 </unitCapacity>
+
+
+	<unitPrice>
+		<i0> 700 </i0>
+		<i1> 400 </i1>
+		<i2> 100 </i2>
+		<i3> 250</i3>
+	</unitPrice>
+
+	<infantry>
+	  <file>assets/YC/yellowcometInf1.png</file>
+	  <startLoc x="910" y="225"/>
+	  <frames>12</frames>
+	  <frameInterval>100</frameInterval>
+	  <speedX>150</speedX>
+	  <speedY>150</speedY>
+	  <transparency>true</transparency>
+	  <ammount>1</ammount>
+	  <safeDistance> 120 </safeDistance>
+	  <acceleration> 1.5 </acceleration>
+	  <DecisionInterval>3500 </DecisionInterval>
+		<chunk>
+		 	<size>8</size>
+		 	<distance>30</distance>
+		</chunk>
+		<hp>
+			<width> 30 </width>
+			<height> 5</height>
+			<barColor r="0" g="255" b="0" a="255"/>
+			<backColor r="0" g="155" b="155" a="125" />
+			<increment> 2 </increment>
+		</hp>
+		<debugLoc x="5" y="90"/>
+		<value> 150 </value>
+	</infantry>
+
+
+
+<truck>
+  <file>assets/YC/yellowcometApc.png</file>
+	  <startLoc x="910" y="225"/>
+  <frames>4</frames>
+  <frameInterval>100</frameInterval>
+  <speedX>70</speedX>
+  <speedY>70</speedY>
+  <transparency>true</transparency>
+  <safeDistance> 120 </safeDistance>
+  <ammount>1</ammount>
+	<troopCapacity> 1 </troopCapacity>
+  <acceleration> 1.5 </acceleration>	
+	<chunk>
+    	<size>16</size>
+    	<distance>30</distance>
+	</chunk>
+	<hp>
+		<width> 70 </width>
+		<height> 5</height>
+		<barColor r="255" g="255" b="0" a="255"/>
+		<backColor r="255" g="155" b="155" a="100" />
+		<increment> 20 </increment>
+	</hp>
+
+	<DecisionInterval>3500 </DecisionInterval>
+	<DeploymentInterval>2000 </DeploymentInterval>
+	<value> 300</value>
+</truck>
+
+
+
+	<tank>
+	  <file>assets/YC/tank.png</file>  	  <startLoc x="910" y="225"/>
+	  <frames>4</frames>   <frameInterval>100</frameInterval>
+	  <speedX>30</speedX>  <speedY>30</speedY>
+	  <transparency>true</transparency> <ammount>1</ammount>
+	  <safeDistance> 120 </safeDistance>  <acceleration> 1.5 </acceleration>
+	  <DecisionInterval>3500 </DecisionInterval>
+		<chunk>
+		 	<size>8</size> 	<distance>30</distance>
+		</chunk>
+		<hp>
+			<width> 30 </width>  <height> 5</height>
+			<barColor r="0" g="255" b="0" a="255"/> <backColor r="0" g="155" b="155" a="125" />
+			<increment> 30 </increment>
+		</hp>
+		<debugLoc x="5" y="90"/>
+				<value> 500 </value>
+	</tank>
+
+
+	<rocketman>
+	  <file>assets/YC/yellowcometInf2.png</file>
+	  <startLoc x="910" y="225"/>
+	  <frames>16</frames>
+	  <frameInterval>100</frameInterval>
+	  <speedX>150</speedX>
+	  <speedY>150</speedY>
+	  <transparency>true</transparency>
+	  <ammount>1</ammount>
+	  <safeDistance> 120 </safeDistance>
+	  <acceleration> 1.5 </acceleration>
+	  <DecisionInterval>3500 </DecisionInterval>
+		<chunk>
+		 	<size>8</size>
+
+		 	<distance>30</distance>
+		</chunk>
+		<hp>
+			<width> 30 </width>
+			<height> 5</height>
+			<barColor r="0" g="255" b="0" a="255"/>
+			<backColor r="0" g="155" b="155" a="125" />
+			<increment> 5 </increment>
+		</hp>
+		<debugLoc x="5" y="90"/>
+				<value> 100 </value>
+	</rocketman>
+
+
+
+<winscreen>
+	<pos x="5" y="5" w="990 " h="326 "/>
+	<color r="0" g="115" b="0 " a="175 "/>
+	<txtcolor r="255" g="255" b="255 " a="255 "/>
+	<mssg> Player 2 wins! Press F4 to play again or Press Esc to quit  </mssg>
+
+	<startLoc x="700" y="30" />
+
+
+
+				  <file>assets/COs/sonjaProfile.png</file>
+				  <frames>8</frames>
+				  <transparency>true</transparency>
+
+</winscreen>
+
+</EnemyHQ>
+
+<p1Pointer>
+
+	  <file>assets/pointerP1.png</file>  	  <startLoc x="555" y="333"/>
+	  <frames>2</frames>   
+	<frameInterval>100</frameInterval>
+	  <speedX>30</speedX> 
+	 <speedY>30</speedY>
+	  <transparency>true</transparency> <ammount>1</ammount>
+
+
+
+</p1Pointer>
+
+
+<p2Pointer>
+
+	  <file>assets/pointerP2.png</file>  	  <startLoc x="555" y="225"/>
+	  <frames>2</frames>   
+	<frameInterval>100</frameInterval>
+	  <speedX>30</speedX> 
+	 <speedY>30</speedY>
+	  <transparency>true</transparency> <ammount>1</ammount>
+
+
+
+</p2Pointer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ****************************huds ********************* -->
+<MainHud>
+	<loc x="5" y="5" w="120" h="87"/>
+	<color r="255" g="255" b="255" a="255"/>
+	<size> 6 </size>
+	<spacing> 14 </spacing>
+	<message0> FPS 				</message0>
+	<message1> W -> move up 	</message1>
+	<message2> S -> move down 	</message2>
+	<message3> A -> move left 	</message3>
+	<message4> D -> move right </message4>
+	<message5> Space -> shoot		</message5>
+	<dimX> 50 </dimX>
+	<dimY> 50 </dimY>
+	<r_color r="255" g="110" b="0" a="127"/>
+
+</MainHud>
+
+
+<Bullet_Hud> 
+	<loc x="325" y ="5" w="170" h="64"/>
+ 	<color r="255" g="255" b="255" a="255"/>
+	<r_color r="255" g="110" b="0" a="127"/>
+	<size> 4 </size>
+	<spacing> 14 </spacing>
+	<message0>ab: </message0>
+	<message1>bp:	</message1>
+	<message2>---  </message2>
+	<message3>to disable, press f2 </message3>
+</Bullet_Hud>
+
+<Count_Hud> 
+ 	<loc x="130" y ="5" w="190" h="64"/>
+ 	<color r="255" g="255" b="255" a="255"/>
+	<r_color r="255" g="110" b="0" a="127"/>
+	<size> 1 </size>
+	<NumToReplace> 1 </NumToReplace>
+	<spacing> 14 </spacing>
+	<message0> Enemies Defeated: 0 </message0>
+
+	<replace0> Enemies Defeated: </replace0>
+
+</Count_Hud>
+
+
+
+
+
+
+
+
+</GameData>
